@@ -1,1 +1,7 @@
-<app-movie-item></app-movie-item>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let item of popularItem" style="width: 22rem;">
+      <app-movie-item [id]="item.id" [title]="item.title" [poster_path]="item.poster_path"></app-movie-item>
+    </div>
+  </div>
+</div>

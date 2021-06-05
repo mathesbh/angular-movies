@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IMoviePopularItem } from 'src/app/models/IMoviePopularItem';
-import { MovieService } from 'src/app/services/movie.service';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-movie-item',
@@ -11,17 +10,12 @@ export class MovieItemComponent implements OnInit {
 
   url_image: string = 'https://image.tmdb.org/t/p/w500';
 
-  popularItems: IMoviePopularItem[] = [];
+  @Input() id: Number;
+  @Input() title: String;
+  @Input() poster_path: String;
 
-  constructor(private movieService: MovieService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getPopularMovies();
   }
-
-  getPopularMovies(): void {
-    this.movieService.getPopularMovie()
-      .subscribe(m => this.popularItems = m.results );
-  }
-
 }
