@@ -1,3 +1,4 @@
+import { IMovieDetails } from '../models/IMovieDetails';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -14,5 +15,9 @@ export class MovieService {
 
   getPopularMovie(): Observable<IMoviePopularResult> {
     return this.http.get<IMoviePopularResult>(`${this.base_url}/movie/popular?api_key=${this.api_key}`);
+  }
+
+  getMovieDetails(id): Observable<IMovieDetails> {
+    return this.http.get<IMovieDetails>(`${this.base_url}/movie/${id}?api_key=${this.api_key}`);
   }
 }

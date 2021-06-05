@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-sm-4">
+            <img src="{{url_image + movieDetail.poster_path}}" alt="..." style="width: 20rem;">
+          </div>
+          <div class="col-sm-8">
+            <div class="card-body">
+              <h5 class="card-title">{{movieDetail.original_title}}</h5>
+              <p class="card-text">{{movieDetail.overview}}</p>
+              <p class="card-text"><small class="text-muted">{{movieDetail.release_date}}</small></p>
+              <a routerLink="/movies" class="btn btn-primary">Voltar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
